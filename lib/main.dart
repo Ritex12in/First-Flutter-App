@@ -1,3 +1,4 @@
+import 'package:first_flutter_app/base/bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,11 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.blue),
-        body: const Center(child: Text("Hello Flutter")),
-      ),
+    return const MaterialApp(
+      home: BottomNavBar()
     );
   }
 }
