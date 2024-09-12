@@ -1,3 +1,5 @@
+import 'package:first_flutter_app/base/widgets/app_double_text.dart';
+import 'package:first_flutter_app/base/widgets/ticket_view.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -10,60 +12,73 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppStyles.bgColor,
+        backgroundColor: AppStyles.bgColor,
         body: ListView(
-      children: [
-        const SizedBox(height: 40,),
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const SizedBox(
+              height: 40,
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Good Morning", style: AppStyles.headLineStyle3),
-                      const SizedBox(
-                        height: 5,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Good Morning", style: AppStyles.headLineStyle3),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Text("Book Tickets", style: AppStyles.headLineStyle1)
+                        ],
                       ),
-                      Text("Book Tickets", style: AppStyles.headLineStyle1)
+                      Container(
+                        decoration: BoxDecoration(
+                            image: const DecorationImage(
+                                image: AssetImage(AppMedia.logo)),
+                            borderRadius: BorderRadius.circular(10)),
+                        width: 50,
+                        height: 50,
+                      )
                     ],
                   ),
+                  const SizedBox(
+                    height: 25,
+                  ),
                   Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 12, vertical: 12),
                     decoration: BoxDecoration(
-                        image: const DecorationImage(
-                            image: AssetImage(AppMedia.logo)),
-                        borderRadius: BorderRadius.circular(10)),
-                    width: 50,
-                    height: 50,
-                  )
+                        borderRadius: BorderRadius.circular(10),
+                        color: const Color(0xFFf4f6fd)),
+                    child: const Row(
+                      children: [
+                        Icon(
+                          FluentSystemIcons.ic_fluent_search_regular,
+                          color: Color(0xFFBFC205),
+                        ),
+                        Text("Search")
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  const AppDoubleText(
+                    first: 'Upcoming Flights',
+                    second: 'View all',
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const TicketView()
                 ],
               ),
-              const SizedBox(
-                height: 25,
-              ),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: const Color(0xFFf4f6fd)),
-                child: const Row(
-                  children: [
-                    Icon(
-                      FluentSystemIcons.ic_fluent_search_regular,
-                      color: Color(0xFFBFC205),
-                    ),
-                    Text("Search")
-                  ],
-                ),
-              )
-            ],
-          ),
-        )
-      ],
-    ));
+            ),
+          ],
+        ));
   }
 }
