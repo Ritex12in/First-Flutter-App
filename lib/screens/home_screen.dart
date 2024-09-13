@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../base/res/media.dart';
 import '../base/res/styles/app_styles.dart';
+import '../base/utils/all_jason.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -74,7 +75,12 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  const TicketView()
+                  SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: ticketList.take(5).map((singleTicket)=>
+                            TicketView(ticket: singleTicket, margin: 16,)).toList()
+                      ))
                 ],
               ),
             ),

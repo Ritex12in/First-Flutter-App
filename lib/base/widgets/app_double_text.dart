@@ -1,4 +1,5 @@
 import 'package:first_flutter_app/base/res/styles/app_styles.dart';
+import 'package:first_flutter_app/base/widgets/all_tickets.dart';
 import 'package:flutter/material.dart';
 
 class AppDoubleText extends StatelessWidget {
@@ -15,6 +16,7 @@ class AppDoubleText extends StatelessWidget {
           style: AppStyles.headLineStyle2,
         ),
         InkWell(
+          onTap: ()=> Navigator.pushNamed(context, "all_tickets"),
           child: Text(
             second,
             style: AppStyles.textStyle.copyWith(color: AppStyles.primaryColor),
