@@ -23,6 +23,7 @@ class HomeScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,7 +73,7 @@ class HomeScreen extends StatelessWidget {
                   AppDoubleText(
                     first: 'Upcoming Flights',
                     second: 'View all',
-                    func: ()=> Navigator.pushNamed(context, "/all_tickets"),
+                    func: () => Navigator.pushNamed(context, "/all_tickets"),
                   ),
                   const SizedBox(
                     height: 20,
@@ -80,20 +81,27 @@ class HomeScreen extends StatelessWidget {
                   SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
-                        children: ticketList.take(5).map((singleTicket)=>
-                            TicketView(ticket: singleTicket, margin: 16,)).toList()
-                      )),
+                          children: ticketList
+                              .take(5)
+                              .map((singleTicket) => TicketView(
+                                    ticket: singleTicket,
+                                    margin: 16,
+                                  ))
+                              .toList())),
+                  const SizedBox(height: 20,),
                   AppDoubleText(
-                    first: 'Hotels',
-                    second: 'View all',
-                    func: (){
-
-                    }
-                  ),
+                      first: 'Hotels', second: 'View all', func: () {}),
                   const SizedBox(
                     height: 20,
                   ),
-                  const Hotel(),
+                  SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children:
+                          hotelList.take(5).map((singleHotel)=>
+                              Hotel(hotel: singleHotel,)).toList(),
+                      )
+                  ),
                 ],
               ),
             ),
