@@ -1,5 +1,6 @@
 import 'package:first_flutter_app/base/widgets/app_double_text.dart';
 import 'package:first_flutter_app/base/widgets/ticket_view.dart';
+import 'package:first_flutter_app/screens/widgets/hotel.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -68,9 +69,10 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(
                     height: 40,
                   ),
-                  const AppDoubleText(
+                  AppDoubleText(
                     first: 'Upcoming Flights',
                     second: 'View all',
+                    func: ()=> Navigator.pushNamed(context, "/all_tickets"),
                   ),
                   const SizedBox(
                     height: 20,
@@ -80,7 +82,18 @@ class HomeScreen extends StatelessWidget {
                       child: Row(
                         children: ticketList.take(5).map((singleTicket)=>
                             TicketView(ticket: singleTicket, margin: 16,)).toList()
-                      ))
+                      )),
+                  AppDoubleText(
+                    first: 'Hotels',
+                    second: 'View all',
+                    func: (){
+
+                    }
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  const Hotel(),
                 ],
               ),
             ),

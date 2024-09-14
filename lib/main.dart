@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         "/": (context) => const BottomNavBar(),
-        "all_tickets": (context) => const AllTickets()
+        "/all_tickets": (context) => const AllTickets()
       },
     );
   }
