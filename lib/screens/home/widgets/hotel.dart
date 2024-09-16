@@ -1,4 +1,3 @@
-import 'package:first_flutter_app/base/res/media.dart';
 import 'package:first_flutter_app/base/res/styles/app_styles.dart';
 import 'package:flutter/material.dart';
 

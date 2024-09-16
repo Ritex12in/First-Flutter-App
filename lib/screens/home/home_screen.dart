@@ -1,12 +1,12 @@
 import 'package:first_flutter_app/base/widgets/app_double_text.dart';
 import 'package:first_flutter_app/base/widgets/ticket_view.dart';
-import 'package:first_flutter_app/screens/widgets/hotel.dart';
+import 'package:first_flutter_app/screens/home/widgets/hotel.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 
-import '../base/res/media.dart';
-import '../base/res/styles/app_styles.dart';
-import '../base/utils/all_jason.dart';
+import '../../base/res/media.dart';
+import '../../base/res/styles/app_styles.dart';
+import '../../base/utils/all_jason.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
