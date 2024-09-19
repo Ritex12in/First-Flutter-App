@@ -1,3 +1,4 @@
+import 'package:first_flutter_app/base/res/media.dart';
 import 'package:first_flutter_app/base/res/styles/app_styles.dart';
 import 'package:first_flutter_app/screens/search/widgets/app_text_icon.dart';
 import 'package:first_flutter_app/screens/search/widgets/app_ticket_tabs.dart';
@@ -11,6 +12,7 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: AppStyles.bgColor,
       body: ListView(
@@ -37,6 +39,46 @@ class SearchScreen extends StatelessWidget {
             second: 'View all',
             func: () => Navigator.pushNamed(context, "/all_tickets"),
           ),
+          const SizedBox(height: 15,),
+          Row(
+            children: [
+              Container(
+                width: size.width*.42,
+                height: 405,
+                padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade200,
+                      blurRadius: 1,
+                      spreadRadius: 2,
+                    )
+                  ]
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 190,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: const DecorationImage(
+                          fit: BoxFit.cover,
+                          image: AssetImage(AppMedia.planeSit),
+                        )
+                      ),
+                    ),
+                    const SizedBox(height: 12,),
+                    Text(
+                      "20% discount on early booking of this flight. Don't miss",
+                      style: AppStyles.headLineStyle2,
+                    )
+                  ],
+                )
+              )
+            ],
+          )
         ],
       ),
     );
