@@ -17,6 +17,7 @@ class AppTicketTabs extends StatelessWidget {
         children: [
           AppTabs(tabText: firstTab, tabColor: true, tabBorder: true),
           AppTabs(tabText: secondTab, tabColor: false, tabBorder: false),
+
         ],
       ),
     );

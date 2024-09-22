@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class AppLayoutBuilderWidget extends StatelessWidget {
   final int randomDivider;
   final double width;
+  final Color color;
   const AppLayoutBuilderWidget({super.key, required this.randomDivider,
-    this.width = 3});
+    this.width = 3, this.color = Colors.white});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +19,8 @@ class AppLayoutBuilderWidget extends StatelessWidget {
               (index) => SizedBox(
                 width: width,
                 height: 1,
-                child: const DecoratedBox(decoration: BoxDecoration(
-                  color: Colors.white,
+                child: DecoratedBox(decoration: BoxDecoration(
+                  color: color,
                 )),
               )),
         );

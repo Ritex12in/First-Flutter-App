@@ -5,12 +5,14 @@ class BigCircle extends StatelessWidget {
   final double bottomRight;
   final double topLeft;
   final double bottomLeft;
+  final Color color;
   const BigCircle({
     super.key,
     this.topRight = 0,
     this.bottomRight = 0,
     this.topLeft = 0,
     this.bottomLeft = 0,
+    this.color = Colors.white
   });
 
   @override
@@ -20,7 +22,7 @@ class BigCircle extends StatelessWidget {
       width: 10,
       child: DecoratedBox(
           decoration: BoxDecoration(
-              color: Colors.white,
+              color: color,
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(topRight),
                   bottomRight: Radius.circular(bottomRight),
